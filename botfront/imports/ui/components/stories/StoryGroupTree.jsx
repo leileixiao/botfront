@@ -38,9 +38,7 @@ export default function StoryGroupTree(props) {
             rootId: 'root',
             items: {
                 root: {
-                    children: storyGroupOrder.length
-                        ? storyGroupOrder
-                        : storyGroups.map(({ _id }) => _id),
+                    children: storyGroups.map(({ _id }) => _id), // Do not use story group order here it not always up to date (e.g after an import) and can cause inconsitency in the tree
                     id: 'root',
                     title: 'root',
                     canBearChildren: true,
